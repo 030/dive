@@ -1,0 +1,65 @@
+---
+linters:
+  enable-all: true
+  disable:
+    - cyclop
+    - dogsled
+    - dupword
+    - errorlint
+    - exhaustive
+    - exhaustruct
+    - forbidigo
+    - forcetypeassert
+    - funlen
+    - gci
+    - gochecknoglobals
+    - gochecknoinits
+    - gocognit
+    - goconst
+    - gocritic
+    - godot
+    - godox
+    - goerr113
+    - gofmt
+    - gofumpt
+    - goimports
+    - golint
+    - gomnd
+    - gomoddirectives
+    - gosec
+    - ireturn
+    - lll
+    - makezero
+    - misspell
+    - nestif
+    - nilerr
+    - nlreturn
+    - noctx
+    - nonamedreturns
+    - paralleltest
+    - prealloc
+    - revive
+    - staticcheck
+    - stylecheck
+    - tagliatelle
+    - testpackage
+    - thelper
+    - unparam
+    - usestdlibvars
+    - varnamelen
+    - whitespace
+    - wrapcheck
+    - wsl
+
+    #
+    # The following linters have been deprecated
+    #
+    - maligned
+    - ifshort
+    - structcheck
+    - exhaustivestruct
+    - scopelint
+    - deadcode
+    - nosnakecase
+    - interfacer
+    - varcheck

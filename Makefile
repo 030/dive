@@ -89,42 +89,42 @@ ci-test-rpm-package-install:
 ci-test-linux-run:
 	chmod 755 ./dist/dive_linux_amd64/dive && \
 	./dist/dive_linux_amd64/dive '${TEST_IMAGE}'  --ci && \
-    ./dist/dive_linux_amd64/dive --source docker-archive .data/test-kaniko-image.tar  --ci --ci-config .data/.dive-ci
+    ./dist/dive_linux_amd64/dive --source docker-archive test/testdata/test-kaniko-image.tar  --ci --ci-config test/testdata/.dive-ci
 
 # we're not attempting to test docker, just our ability to run on these systems. This avoids setting up docker in CI.
 ci-test-mac-run:
 	chmod 755 ./dist/dive_darwin_amd64/dive && \
-	./dist/dive_darwin_amd64/dive --source docker-archive .data/test-docker-image.tar  --ci --ci-config .data/.dive-ci
+	./dist/dive_darwin_amd64/dive --source docker-archive test/testdata/test-docker-image.tar  --ci --ci-config test/testdata/.dive-ci
 
 # we're not attempting to test docker, just our ability to run on these systems. This avoids setting up docker in CI.
 ci-test-windows-run:
-	./dist/dive_windows_amd64/dive --source docker-archive .data/test-docker-image.tar  --ci --ci-config .data/.dive-ci
+	./dist/dive_windows_amd64/dive --source docker-archive test/testdata/test-docker-image.tar  --ci --ci-config test/testdata/.dive-ci
 
 
 
 ## For development
 
 run: build
-	$(BUILD_PATH) build -t dive-example:latest -f .data/Dockerfile.example .
+	$(BUILD_PATH) build -t dive-example:latest -f test/testdata/Dockerfile.example .
 
 run-large: build
 	$(BUILD_PATH) amir20/clashleaders:latest
 
 run-podman: build
-	podman build -t dive-example:latest -f .data/Dockerfile.example .
+	podman build -t dive-example:latest -f test/testdata/Dockerfile.example .
 	$(BUILD_PATH) localhost/dive-example:latest --engine podman
 
 run-podman-large: build
 	$(BUILD_PATH) docker.io/amir20/clashleaders:latest --engine podman
 
 run-ci: build
-	CI=true $(BUILD_PATH) dive-example:latest --ci-config .data/.dive-ci
+	CI=true $(BUILD_PATH) dive-example:latest --ci-config test/testdata/.dive-ci
 
 build: gofmt
 	go build -o $(BUILD_PATH)
 
 generate-test-data:
-	docker build -t dive-test:latest -f .data/Dockerfile.test-image . && docker image save -o .data/test-docker-image.tar dive-test:latest && echo 'Exported test data!'
+	docker build -t dive-test:latest -f test/testdata/Dockerfile.test-image . && docker image save -o test/testdata/test-docker-image.tar dive-test:latest && echo 'Exported test data!'
 
 test: gofmt
 	./.scripts/test-coverage.sh
