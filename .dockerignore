@@ -1,11 +1,10 @@
 /.git
-/.data
+/test/testdata
 /.cover
 /dist
 !/dist/dive_linux_amd64
 /ui
 /utils
 /image
-/cmd
 /build
 coverage.txt
