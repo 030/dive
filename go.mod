@@ -9,7 +9,7 @@ require (
 	github.com/docker/cli v23.0.0+incompatible
 	github.com/docker/docker v20.10.23+incompatible
 	github.com/dustin/go-humanize v1.0.1
-	github.com/fatih/color v1.13.0
+	github.com/fatih/color v1.14.1
 	github.com/google/uuid v1.3.0
 	github.com/logrusorgru/aurora v2.0.3+incompatible
 	github.com/lunixbochs/vtclean v1.0.0
