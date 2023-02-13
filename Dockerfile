@@ -22,7 +22,7 @@ RUN apk add --no-cache curl=~7 git=~2 && \
   tar -xzf - docker/docker --strip-component=1 && \
   mv docker /tmp/
 
-FROM alpine:3.17.1
+FROM alpine:3.17.2
 ENV BIN=/usr/local/bin/
 ENV USERNAME=dive
 ENV BASE=/opt/${USERNAME}
