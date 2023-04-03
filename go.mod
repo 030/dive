@@ -6,7 +6,7 @@ require (
 	github.com/awesome-gocui/gocui v1.1.0
 	github.com/awesome-gocui/keybinding v1.0.0
 	github.com/cespare/xxhash v1.1.0
-	github.com/docker/cli v23.0.0+incompatible
+	github.com/docker/cli v23.0.2+incompatible
 	github.com/docker/docker v20.10.23+incompatible
 	github.com/dustin/go-humanize v1.0.1
 	github.com/fatih/color v1.14.1
